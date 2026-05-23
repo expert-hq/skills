@@ -1,8 +1,8 @@
 # Expert
 
-The escalation button for when AI can't get you there.
+When AI can't get you there, book a human who can.
 
-Your agent tried. You rephrased it. Switched models. Still stuck. This skill books a 30-minute call ($50 AUD) with a human who's actually built this before. 1-800-EXPERT for your coding agent.
+30-minute call. $50 AUD. 1-800-EXPERT for your coding agent.
 
 ## Install
 
