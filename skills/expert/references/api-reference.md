@@ -49,11 +49,11 @@ curl -s "https://api.cal.com/v2/slots?eventTypeSlug=expert&username=mblode&start
     "2026-05-26": [
       {
         "start": "2026-05-26T09:00:00.000+10:00",
-        "end": "2026-05-26T10:00:00.000+10:00"
+        "end": "2026-05-26T09:30:00.000+10:00"
       },
       {
-        "start": "2026-05-26T10:00:00.000+10:00",
-        "end": "2026-05-26T11:00:00.000+10:00"
+        "start": "2026-05-26T09:30:00.000+10:00",
+        "end": "2026-05-26T10:00:00.000+10:00"
       }
     ],
     "2026-05-27": []
@@ -119,8 +119,8 @@ Content-Type: application/json
     "uid": "booking_uid_456",
     "title": "Expert Session",
     "start": "2026-05-25T23:00:00Z",
-    "end": "2026-05-26T00:00:00Z",
-    "duration": 60,
+    "end": "2026-05-25T23:30:00Z",
+    "duration": 30,
     "status": "accepted",
     "location": "https://meet.google.com/abc-def-ghi",
     "hosts": [{ "name": "Matthew Blode", "username": "mblode" }],
