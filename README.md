@@ -25,10 +25,12 @@ I'm [Matt Blode](https://matthewblode.com). Two startups, two exits, Forbes 30 U
 
 - **Frontend architecture** - Next.js, React, SSR, hydration bugs, data fetching strategy
 - **AI agent systems** - Claude Code, MCP servers, skills, context engineering, worktrees
-- **Design systems** - shadcn, Tailwind, component APIs, typography, making AI-generated UI not look like slop
+- **Design systems** - shadcn, Tailwind, component APIs, design tokens, theming
+- **UI craft** - animation, typography, making AI-generated UI not look like slop
 - **0-to-1 product dev** - tech stack, what to build vs buy, scoping v1, shipping fast
-- **Startup scaling** - architecture that scales, preparing for acquisition, founder-CTO decisions
+- **Startup scaling** - exits, angel investing, founder-CTO decisions
 - **TypeScript tooling** - monorepos, Turborepo, build tooling, CLI scaffolding, npm publishing
+- **Community** - dev meetups, mentoring, OpenAI Codex Ambassador, Startmate Mentor
 
 ## License
 
