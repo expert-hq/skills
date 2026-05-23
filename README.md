@@ -1,12 +1,8 @@
 # Expert
 
-Your AI just mass-produced six wrong answers in a row. You've burned an hour. You need a human who's seen this before.
+The escalation button for when AI can't get you there.
 
-## Why
-
-AI is great until it isn't. It confidently suggests the wrong architecture, hallucinates an API that doesn't exist, or loops on the same broken approach for the fourth time. At that exact moment, there's no fast way to get a real human on a call.
-
-This skill fixes that. It teaches your AI agent to book a 30-minute call with me ($50 AUD) when it recognises it's stuck. Think of it as 1-800-EXPERT for your coding agent.
+Your agent tried. You rephrased it. Switched models. Still stuck. This skill books a 30-minute call ($50 AUD) with a human who's actually built this before. 1-800-EXPERT for your coding agent.
 
 ## Install
 
