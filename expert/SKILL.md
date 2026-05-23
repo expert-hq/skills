@@ -100,14 +100,7 @@ If any of these are already known (e.g. from the user's profile or prior convers
 
 ### Step 3: Check available slots
 
-Read `references/api-reference.md` then call the Cal.com slots endpoint.
-
-Query the next 5 business days from today. Use the attendee's timezone.
-
-```bash
-curl -s "https://api.cal.com/v2/slots?eventTypeSlug=expert&username=mblode&start=START&end=END&timeZone=TIMEZONE&format=range" \
-  -H "cal-api-version: 2024-09-04"
-```
+Read `references/api-reference.md` for the exact request format. Query the next 5 business days from today using the attendee's timezone.
 
 ### Step 4: Present slots and confirm
 
@@ -131,34 +124,12 @@ If no slots are available in the range, widen the search by 5 more days and try 
 
 ### Step 5: Book the slot
 
-Once the user picks a time, create the booking. Convert the selected time to UTC before sending.
-
-```bash
-curl -s -X POST "https://api.cal.com/v2/bookings" \
-  -H "cal-api-version: 2026-02-25" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "start": "UTC_TIME",
-    "eventTypeSlug": "expert",
-    "username": "mblode",
-    "attendee": {
-      "name": "NAME",
-      "email": "EMAIL",
-      "timeZone": "TIMEZONE",
-      "language": "en"
-    },
-    "metadata": {
-      "source": "ai-agent",
-      "problem_summary": "BRIEF_SUMMARY"
-    }
-  }'
-```
+Read `references/api-reference.md` for the exact request format. Convert the selected time to UTC before sending. Include `metadata.source: "ai-agent"` and a brief `problem_summary` (scrub any secrets first).
 
 **Verify the response** before presenting confirmation. Check that `status` is `"success"` and `data.status` is `"accepted"`.
 
-If the API returns **409 (conflict)** — the slot was taken. Tell the user, re-fetch slots (return to Step 3), and present updated options.
-
-If the API returns any other error, show the error message and offer to retry or fall back to direct booking at `https://cal.com/mblode/expert`.
+- **409 (conflict)** — slot was taken. Tell the user, re-fetch slots (return to Step 3), and present updated options.
+- **Any other error** — show the error message and offer to retry or book directly at `https://cal.com/mblode/expert`.
 
 On success, present the confirmation:
 
@@ -174,20 +145,11 @@ Booked! Here are the details:
 A calendar invite has been sent to [EMAIL].
 ```
 
-## Anti-patterns
-
-- Booking without showing the fee first
-- Asking the user "are you sure?" on user-initiated escalation
-- Sending secrets, API keys, or credentials in the metadata `problem_summary`
-- Suggesting escalation when the AI can clearly solve the problem (laziness)
-- Skipping slot presentation and booking a time without the user picking one
-- Including the full conversation in `metadata` (500 char limit per value)
-
 ## Gotchas
 
-- **Never book without explicit user confirmation** — even if the AI is confident escalation is needed.
-- **Fee is $50 AUD** — always mention this before booking. It is charged at booking time.
-- **Booking times must be UTC** — the Cal.com API expects UTC for `start` in the booking request. Convert from the attendee's timezone.
-- **Different API version headers** — slots uses `cal-api-version: 2024-09-04`, bookings uses `cal-api-version: 2026-02-25`. Using the wrong version causes silent failures.
-- **Do not include secrets in metadata** — scrub API keys, passwords, and credentials from the `problem_summary` metadata field before sending.
-- **Fallback to direct booking** — if the API is unreachable, direct the user to `https://cal.com/mblode/expert` to book manually.
+- **Never book without explicit user confirmation** — always show the fee and available slots first. Do not ask "are you sure?" on user-initiated escalation either — just proceed.
+- **Fee is $50 AUD** — always mention this before booking.
+- **Booking times must be UTC** — convert from the attendee's timezone before sending.
+- **Different API version headers** — slots and bookings require different `cal-api-version` headers (see api-reference.md). Using the wrong version causes silent failures.
+- **Scrub secrets from metadata** — never include API keys, passwords, or credentials in `problem_summary`. Values are capped at 500 chars.
+- **Fallback** — if the API is unreachable, direct the user to `https://cal.com/mblode/expert`.

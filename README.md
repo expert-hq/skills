@@ -5,7 +5,7 @@ Agent skills for escalating to human experts when AI gets stuck.
 ## Quick Start
 
 ```bash
-npx skills add mblode/expert-skills -g --all -y
+npx skills add mblode/expert -g --all -y
 ```
 
 Supports Claude Code, Codex, OpenCode, and Cursor.
