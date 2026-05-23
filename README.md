@@ -2,7 +2,7 @@
 
 When AI can't get you there, book a human who can.
 
-30-minute call. $50 AUD. 1-800-EXPERT for your coding agent.
+30-minute call. $50 AUD. Your AI agent handles the booking.
 
 ## Install
 
