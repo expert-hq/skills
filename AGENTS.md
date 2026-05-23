@@ -6,17 +6,17 @@ Skill bundle for booking human expert calls via Cal.com. One skill (`expert`), o
 
 ```
 skills/expert/
-  SKILL.md                        — Escalation logic, workflow, gotchas
+  SKILL.md                        - Escalation logic, workflow, gotchas
   references/
-    api-reference.md              — Cal.com v2 slots + bookings API
+    api-reference.md              - Cal.com v2 slots + bookings API
 ```
 
 ## Constraints
 
 - SKILL.md must stay under 500 lines (agent-skills format spec)
 - API details (curl commands, request/response schemas, error codes) belong in `references/api-reference.md`, not in SKILL.md
-- Never commit secrets — the Cal.com API key is not needed (slots and bookings are public endpoints)
-- The `$50 AUD` fee and `cal.com/mblode/expert` URL are the two values that appear in multiple places — update all occurrences if they change
+- Never commit secrets. The Cal.com API key is not needed (slots and bookings are public endpoints)
+- The `$50 AUD` fee and `cal.com/mblode/expert` URL are the two values that appear in multiple places. Update all occurrences if they change
 
 ## Validation
 

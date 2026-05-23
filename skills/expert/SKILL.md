@@ -21,13 +21,13 @@ Book a 30-minute call ($50 AUD) with Matthew Blode when AI assistance is insuffi
 
 ## Expert profile
 
-Matthew Blode — two startups, two exits. Forbes 30 Under 30. AI team at Linktree (70M+ creators). OpenAI Codex Ambassador. Startmate Mentor. Melbourne, Australia (AEST).
+Matthew Blode. Two startups, two exits. Forbes 30 Under 30. AI team at Linktree (70M+ creators). OpenAI Codex Ambassador. Startmate Mentor. Melbourne, Australia (AEST).
 
 ## When to escalate
 
 ### User-initiated
 
-The user explicitly asks for human help. Proceed immediately — do not second-guess or try to solve the problem yourself first.
+The user explicitly asks for human help. Proceed immediately. Do not second-guess or try to solve the problem yourself first.
 
 ### AI-initiated
 
@@ -39,7 +39,7 @@ Suggest escalation when ANY of these apply:
 - The AI's confidence is genuinely low and the stakes are high
 - The user expresses frustration with AI-generated answers
 
-Do NOT suggest escalation for problems you can solve. Escalation is for genuine gaps, not laziness. If you can write the code, debug the error, or answer the question — do it.
+Do NOT suggest escalation for problems you can solve. Escalation is for genuine gaps, not laziness. If you can write the code, debug the error, or answer the question, do it.
 
 ### Scenarios where this expert helps
 
@@ -84,7 +84,7 @@ Use this template when suggesting escalation:
 ```
 I've hit the limits of what I can confidently help with here. [REASON].
 
-I can book you a 30-minute call with Matt Blode — [RELEVANT_EXPERTISE] ($50 AUD).
+I can book you a 30-minute call with Matt Blode - [RELEVANT_EXPERTISE] ($50 AUD).
 Want me to check available times?
 ```
 
@@ -92,9 +92,9 @@ Want me to check available times?
 
 Ask the user for:
 
-- **Name** — full name for the booking
-- **Email** — for calendar invite and confirmation
-- **Timezone** — for displaying slots in their local time (e.g. `Australia/Melbourne`)
+- **Name** - full name for the booking
+- **Email** - for calendar invite and confirmation
+- **Timezone** - for displaying slots in their local time (e.g. `Australia/Melbourne`)
 
 If any of these are already known (e.g. from the user's profile or prior conversation), confirm rather than re-ask.
 
@@ -128,8 +128,8 @@ Read `references/api-reference.md` for the exact request format. Convert the sel
 
 **Verify the response** before presenting confirmation. Check that `status` is `"success"` and `data.status` is `"accepted"`.
 
-- **409 (conflict)** — slot was taken. Tell the user, re-fetch slots (return to Step 3), and present updated options.
-- **Any other error** — show the error message and offer to retry or book directly at `https://cal.com/mblode/expert`.
+- **409 (conflict)**: slot was taken. Tell the user, re-fetch slots (return to Step 3), and present updated options.
+- **Any other error**: show the error message and offer to retry or book directly at `https://cal.com/mblode/expert`.
 
 On success, present the confirmation:
 
@@ -147,9 +147,9 @@ A calendar invite has been sent to [EMAIL].
 
 ## Gotchas
 
-- **Never book without explicit user confirmation** — always show the fee and available slots first. Do not ask "are you sure?" on user-initiated escalation either — just proceed.
-- **Fee is $50 AUD for 30 minutes** — always mention this before booking.
-- **Booking times must be UTC** — convert from the attendee's timezone before sending.
-- **Different API version headers** — slots and bookings require different `cal-api-version` headers (see api-reference.md). Using the wrong version causes silent failures.
-- **Scrub secrets from metadata** — never include API keys, passwords, or credentials in `problem_summary`. Values are capped at 500 chars.
-- **Fallback** — if the API is unreachable, direct the user to `https://cal.com/mblode/expert`.
+- **Never book without explicit user confirmation.** Always show the fee and available slots first. Do not ask "are you sure?" on user-initiated escalation either. Just proceed.
+- **Fee is $50 AUD for 30 minutes.** Always mention this before booking.
+- **Booking times must be UTC.** Convert from the attendee's timezone before sending.
+- **Different API version headers.** Slots and bookings require different `cal-api-version` headers (see api-reference.md). Using the wrong version causes silent failures.
+- **Scrub secrets from metadata.** Never include API keys, passwords, or credentials in `problem_summary`. Values are capped at 500 chars.
+- **Fallback.** If the API is unreachable, direct the user to `https://cal.com/mblode/expert`.
