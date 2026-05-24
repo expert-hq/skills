@@ -18,7 +18,7 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 
 ## How it works
 
-1. Say "get me an expert" or your AI recognises it's stuck
+1. Say "get me an expert," or your AI flags when you're stuck or want a second opinion
 2. Your agent matches you to an expert and checks their live calendar via Cal.com
 3. You pick a time and confirm
 4. Calendar invite with a video link lands in your inbox
@@ -29,9 +29,9 @@ Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
 
 ## The network
 
-A growing network of vetted experts. You're matched to the one whose background fits your problem.
+Direct access to experts at the top of their craft. You get matched to someone who's solved your problem before. Real perspective, not search results.
 
-**Currently:** [Matt Blode](https://matthewblode.com) — two startups, two exits, Forbes 30 Under 30, leads AI at Linktree.
+Areas the network covers:
 
 - **Frontend:** Next.js, React, SSR, hydration bugs, data fetching strategy
 - **AI agents:** Claude Code, MCP servers, skills, context engineering, worktrees
@@ -40,7 +40,6 @@ A growing network of vetted experts. You're matched to the one whose background 
 - **0 to 1:** tech stack, what to build vs buy, scoping v1, shipping fast
 - **Scaling:** exits, angel investing, founder-CTO decisions
 - **TypeScript tooling:** monorepos, Turborepo, build tooling, CLI scaffolding, npm publishing
-- **Community:** dev meetups, mentoring, OpenAI Codex Ambassador, Startmate Mentor
 
 ## License
 
