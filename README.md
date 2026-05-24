@@ -23,6 +23,10 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 3. You pick a time and confirm
 4. Calendar invite with a video link lands in your inbox
 
+## Book directly
+
+Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
+
 ## What I help with
 
 I'm [Matt Blode](https://matthewblode.com). Two startups, two exits, Forbes 30 Under 30. I lead AI at Linktree.
