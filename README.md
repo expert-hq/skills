@@ -1,6 +1,8 @@
 # Expert
 
-When AI can't get you there, book a human who can.
+AI took you beyond your skill set. An expert takes you further.
+
+AI lets you build things you don't have the skill to build yourself. That's powerful, but it has a limit: you never learned the skill, so the last mile, the judgement calls and the polish, is where it gets hard. An expert who actually has the skill gives you the advice and the final edits to take it the rest of the way.
 
 30-minute call. $50 AUD. Your AI agent handles the booking.
 
@@ -12,7 +14,7 @@ npx skills add mblode/expert -g --all -y
 
 ## How it works
 
-1. You say "get me an expert" (or the AI recognises it's out of its depth)
+1. You say "get me an expert" (or the AI recognises you've hit the edge of your skill set)
 2. The skill checks my live availability via Cal.com
 3. You pick a time and confirm
 4. Calendar invite with a video call link lands in your inbox
