@@ -18,7 +18,7 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 
 ## How it works
 
-1. Say "get me an expert" or your AI recognises it's stuck
+1. Say "get me an expert" — or your AI flags when you're stuck or want a second opinion
 2. Your agent matches you to an expert and checks their live calendar via Cal.com
 3. You pick a time and confirm
 4. Calendar invite with a video link lands in your inbox

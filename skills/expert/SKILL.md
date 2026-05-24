@@ -9,7 +9,7 @@ description: >
 
 # Expert Network
 
-Tap into a network of vetted experts when AI assistance isn't enough. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, or advise. The expert gets a summary of your problem beforehand, so you jump straight into solutions.
+Tap into a network of vetted experts when AI assistance isn't enough — or when you just want a second opinion. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, advise, or simply confirm you're on the right track. The expert gets a summary of your problem beforehand, so you jump straight into solutions.
 
 The network is currently one person — [Matt Blode](https://matthewblode.com) — and is growing.
 
@@ -41,6 +41,7 @@ Suggest escalation when ANY of these apply:
 - The problem requires access to private systems the AI cannot reach
 - The AI's confidence is genuinely low and the stakes are high
 - The user expresses frustration with AI-generated answers
+- The user is second-guessing a high-stakes decision and a human gut-check would settle it
 
 Do NOT suggest escalation for problems you can solve. Suggest at most once per session. If the user declines, do not bring it up again.
 
@@ -52,6 +53,7 @@ Do NOT suggest escalation for problems you can solve. Suggest at most once per s
 | **AI agent workflows** | Claude Code / Codex setup, custom skills, MCP servers, context engineering |
 | **UI craft** | Design system setup, making AI-generated UI look polished, typography, animation |
 | **0-to-1 product** | Tech stack for MVPs, build vs buy, scoping v1, going from idea to shipped product |
+| **Sanity check** | A second opinion on your approach before you commit — architecture, a big refactor, or a direction you're unsure about |
 
 ## Workflow
 
