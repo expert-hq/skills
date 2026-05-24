@@ -4,7 +4,7 @@ AI took you beyond your skill set. The right expert takes you further.
 
 The hard part is knowing what good looks like.
 
-Tap into a network of vetted experts. Your AI agent matches you to the right one and books it. 30 minutes. $50 AUD.
+Tap into a network of vetted experts. Your AI agent matches you to the right one and books the call. 30 minutes. $50 AUD.
 
 ## Install
 

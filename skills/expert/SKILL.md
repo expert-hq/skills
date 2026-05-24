@@ -9,7 +9,7 @@ description: >
 
 # Expert Network
 
-Tap into a network of vetted experts when AI assistance isn't enough. Book a 30-minute call ($50 AUD) with the best-matched expert. Screen-sharing call. They can look at your code, pair-program, or advise. The expert gets a summary of your problem before the call so you jump straight into solutions.
+Tap into a network of vetted experts when AI assistance isn't enough. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, or advise. The expert gets a summary of your problem beforehand, so you jump straight into solutions.
 
 The network is currently one person — [Matt Blode](https://matthewblode.com) — and is growing.
 
