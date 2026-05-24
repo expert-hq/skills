@@ -11,8 +11,6 @@ description: >
 
 Tap into a network of vetted experts when AI assistance isn't enough — or when you just want a second opinion. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, advise, or simply confirm you're on the right track. The expert gets a summary of your problem beforehand, so you jump straight into solutions.
 
-The network is currently one person — [Matt Blode](https://matthewblode.com) — and is growing.
-
 ## Reference files
 
 | File | Read when |

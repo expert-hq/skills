@@ -29,9 +29,9 @@ Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
 
 ## The network
 
-A growing network of vetted experts. You're matched to the one whose background fits your problem.
+A vetted network of experts. You're matched to the one whose background fits your problem — people who've shipped real products and scaled teams, not search results.
 
-**Currently:** [Matt Blode](https://matthewblode.com) — two startups, two exits, Forbes 30 Under 30, leads AI at Linktree.
+Areas the network covers:
 
 - **Frontend:** Next.js, React, SSR, hydration bugs, data fetching strategy
 - **AI agents:** Claude Code, MCP servers, skills, context engineering, worktrees
