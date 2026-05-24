@@ -2,7 +2,7 @@
 
 AI took you beyond your skill set. An expert takes you further.
 
-The last 10% is where the skill actually lives. Book someone who's shipped it before.
+The hard part is knowing what good looks like.
 
 30-minute call. $50 AUD. Your AI agent handles the booking.
 
