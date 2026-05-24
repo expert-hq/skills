@@ -2,7 +2,7 @@
 
 AI took you beyond your skill set. An expert takes you further.
 
-AI lets you build things you don't have the skill to build yourself. That's powerful, but it has a limit: you never learned the skill, so the last mile, the judgement calls and the polish, is where it gets hard. An expert who actually has the skill gives you the advice and the final edits to take it the rest of the way.
+AI can build what you couldn't build alone. The final edits, the taste and judgement, need someone who's actually done the work.
 
 30-minute call. $50 AUD. Your AI agent handles the booking.
 
