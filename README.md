@@ -18,7 +18,7 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 
 ## How it works
 
-1. Say "get me an expert" — or your AI flags when you're stuck or want a second opinion
+1. Say "get me an expert," or your AI flags when you're stuck or want a second opinion
 2. Your agent matches you to an expert and checks their live calendar via Cal.com
 3. You pick a time and confirm
 4. Calendar invite with a video link lands in your inbox
@@ -29,7 +29,7 @@ Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
 
 ## The network
 
-Direct access to experts at the top of their craft. You're matched to the one whose background fits your problem — real perspective from someone who's shipped it before, not another page of search results.
+Direct access to experts at the top of their craft. You get matched to someone who's solved your problem before. Real perspective, not search results.
 
 Areas the network covers:
 
@@ -40,7 +40,6 @@ Areas the network covers:
 - **0 to 1:** tech stack, what to build vs buy, scoping v1, shipping fast
 - **Scaling:** exits, angel investing, founder-CTO decisions
 - **TypeScript tooling:** monorepos, Turborepo, build tooling, CLI scaffolding, npm publishing
-- **Community:** dev meetups, mentoring, OpenAI Codex Ambassador, Startmate Mentor
 
 ## License
 
