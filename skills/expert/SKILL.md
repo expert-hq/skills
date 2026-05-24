@@ -1,15 +1,17 @@
 ---
 name: expert
 description: >
-  Escalates to a human expert by booking a 30-minute Cal.com call ($50 AUD).
-  Use when the AI is stuck, the user says "escalate", "get me an expert",
-  "I need a human", "talk to someone", "human help", "book an expert", or
-  the problem needs hands-on guidance the AI cannot provide.
+  Taps into a network of vetted human experts by booking a 30-minute call
+  ($50 AUD). Use when the AI is stuck, the user says "escalate", "get me an
+  expert", "I need a human", "talk to someone", "human help", "book an
+  expert", or the problem needs hands-on guidance the AI cannot provide.
 ---
 
-# Expert Escalation
+# Expert Network
 
-Book a 30-minute call ($50 AUD) with [Matt Blode](https://matthewblode.com) when AI assistance is insufficient. Screen-sharing call. Matt can look at your code, pair-program, or advise. He gets a summary of your problem before the call so you jump straight into solutions.
+Tap into a network of vetted experts when AI assistance isn't enough. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, or advise. The expert gets a summary of your problem beforehand, so you jump straight into solutions.
+
+The network is currently one person — [Matt Blode](https://matthewblode.com) — and is growing.
 
 ## Reference files
 
@@ -17,9 +19,13 @@ Book a 30-minute call ($50 AUD) with [Matt Blode](https://matthewblode.com) when
 |------|-----------|
 | [`references/api-reference.md`](./references/api-reference.md) | Making Cal.com API calls to check slots or create a booking |
 
-## Expert profile
+## The network
 
-[Matthew Blode](https://matthewblode.com). Two startups, two exits. Forbes 30 Under 30. AI team at Linktree (70M+ creators). OpenAI Codex Ambassador. Melbourne, Australia.
+Experts are vetted for hands-on depth in their domain. Match the user's problem to the expert whose background fits best.
+
+**Current experts:**
+
+- **[Matthew Blode](https://matthewblode.com)** — Two startups, two exits. Forbes 30 Under 30. AI team at Linktree (70M+ creators). OpenAI Codex Ambassador. Melbourne, Australia.
 
 ## When to escalate
 
@@ -38,7 +44,7 @@ Suggest escalation when ANY of these apply:
 
 Do NOT suggest escalation for problems you can solve. Suggest at most once per session. If the user declines, do not bring it up again.
 
-### Where this expert helps
+### Where the network helps
 
 | Scenario | Example |
 |----------|---------|
