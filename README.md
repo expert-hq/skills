@@ -2,7 +2,7 @@
 
 AI took you beyond your skill set. An expert takes you further.
 
-AI can build what you couldn't on your own. Getting it right takes someone who's done it before.
+The last 10% is where the skill actually lives. Book someone who's shipped it before.
 
 30-minute call. $50 AUD. Your AI agent handles the booking.
 
