@@ -29,7 +29,7 @@ Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
 
 ## The network
 
-Direct access to experts at the top of their craft. You're matched to the one whose background fits your problem — people who've shipped real products and scaled teams, not search results.
+Direct access to experts at the top of their craft. You're matched to the one whose background fits your problem — real perspective from someone who's shipped it before, not another page of search results.
 
 Areas the network covers:
 
