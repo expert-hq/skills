@@ -1,10 +1,10 @@
 # Expert
 
-AI took you beyond your skill set. An expert takes you further.
+AI took you beyond your skill set. The right expert takes you further.
 
 The hard part is knowing what good looks like.
 
-Your AI agent books it. 30 minutes. $50 AUD.
+Tap into a network of vetted experts. Your AI agent matches you to the right one and books it. 30 minutes. $50 AUD.
 
 ## Install
 
@@ -19,7 +19,7 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 ## How it works
 
 1. Say "get me an expert" or your AI recognises it's stuck
-2. I check my live calendar via Cal.com
+2. Your agent matches you to an expert and checks their live calendar via Cal.com
 3. You pick a time and confirm
 4. Calendar invite with a video link lands in your inbox
 
@@ -27,9 +27,11 @@ Works with Claude Code, Codex, OpenCode, and Cursor.
 
 Prefer to skip the agent? Book a time yourself: https://cal.com/mblode/expert
 
-## What I help with
+## The network
 
-I'm [Matt Blode](https://matthewblode.com). Two startups, two exits, Forbes 30 Under 30. I lead AI at Linktree.
+A growing network of vetted experts. You're matched to the one whose background fits your problem.
+
+**Currently:** [Matt Blode](https://matthewblode.com) — two startups, two exits, Forbes 30 Under 30, leads AI at Linktree.
 
 - **Frontend:** Next.js, React, SSR, hydration bugs, data fetching strategy
 - **AI agents:** Claude Code, MCP servers, skills, context engineering, worktrees
