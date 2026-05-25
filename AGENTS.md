@@ -16,7 +16,7 @@ skills/expert/
 - SKILL.md must stay under 500 lines (agent-skills format spec)
 - API details (curl commands, request/response schemas, error codes) belong in `references/api-reference.md`, not in SKILL.md
 - Never commit secrets. The Cal.com API key is not needed (slots and bookings are public endpoints)
-- The `$50 AUD` fee and `cal.com/mblode/expert` URL are the two values that appear in multiple places. Update all occurrences if they change
+- The `$50 AUD` fee and `expert.blode.co/experts` URL are the two values that appear in multiple places. Update all occurrences if they change
 
 ## Validation
 

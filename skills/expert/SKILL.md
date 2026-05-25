@@ -1,15 +1,16 @@
 ---
 name: expert
 description: >
-  Taps into a network of vetted human experts by booking a 30-minute call
-  ($50 AUD). Use when the AI is stuck, the user says "escalate", "get me an
-  expert", "I need a human", "talk to someone", "human help", "book an
-  expert", or the problem needs hands-on guidance the AI cannot provide.
+  The expert your AI agent calls. Taps into a network of vetted human experts
+  by booking a 30-minute screen-sharing call ($50 AUD, charged after booking).
+  Use when the AI is stuck, the user says "escalate", "get me an expert",
+  "I need a human", "talk to someone", "human help", "book an expert",
+  or the problem needs hands-on guidance the AI cannot provide.
 ---
 
 # Expert Network
 
-Tap into a network of vetted experts when AI assistance isn't enough, or when you want a second opinion. Book a 30-minute screen-sharing call ($50 AUD) with the best-matched expert. They can look at your code, pair-program, advise, or confirm you're on the right track. The expert gets a summary of your problem first, so you jump straight in.
+When AI isn't enough, talk to someone who's done it before. Tap into a network of vetted experts. Book a 30-minute screen-sharing call ($50 AUD, charged after booking). The expert gets a summary of the problem beforehand — screen sharing, pair programming, jump straight in. After the call: recording, transcript, and the fix in your dashboard. Tip if it was worth more.
 
 ## Reference files
 
@@ -47,11 +48,12 @@ Do NOT suggest escalation for problems you can solve. Suggest at most once per s
 
 | Scenario | Example |
 |----------|---------|
-| **Frontend architecture** | Next.js App Router, React Server Components, SSR/hydration debugging |
-| **AI agent workflows** | Claude Code / Codex setup, custom skills, MCP servers, context engineering |
-| **UI craft** | Design system setup, making AI-generated UI look polished, typography, animation |
-| **0-to-1 product** | Tech stack for MVPs, build vs buy, scoping v1, going from idea to shipped product |
-| **Sanity check** | A second opinion before you commit: architecture, a big refactor, or a direction you're unsure about |
+| **Founder building with AI** | You built it with AI. Now you need a human to tell you what's fragile |
+| **Investor due diligence** | Technical second opinion before you commit real money |
+| **Product scoping** | You have the roadmap but need someone to tell you what ships first |
+| **Engineering architecture** | Your AI writes the code. You need someone to review the architecture before it ships |
+| **Design and polish** | Your prototype works but doesn't feel right. Design systems, typography, animation |
+| **Second opinion** | Someone built it for you. You can't tell if the output is good |
 
 ## Workflow
 
@@ -62,7 +64,7 @@ If AI-initiated, suggest escalation and wait for confirmation:
 ```
 I've been stuck on this. [BRIEF_REASON].
 
-I can book you a 30-minute call with Matt Blode ($50 AUD). He'll get a summary of the problem beforehand so you can jump straight in.
+I can book you a 30-minute call with Matt Blode ($50 AUD, charged after booking). He'll get a summary of the problem beforehand so you can jump straight in.
 
 Want me to check available times?
 ```
@@ -94,7 +96,7 @@ Available times for a 30-minute expert call ($50 AUD):
 Which time works?
 ```
 
-If no slots in range, widen once to 14 days. If still empty, direct the user to `https://cal.com/mblode/expert`.
+If no slots in range, widen once to 14 days. If still empty, direct the user to `https://expert.blode.co/experts`.
 
 ### Step 3: Book
 
@@ -104,7 +106,7 @@ Verify the response: check `status` is `"success"` and `data.status` is `"accept
 
 - **409**: slot was taken. Re-fetch slots (return to Step 2).
 - **422**: validation error (bad email or timezone). Ask the user to correct and retry.
-- **Any other error**: show the message and offer `https://cal.com/mblode/expert` as fallback.
+- **Any other error**: show the message and offer `https://expert.blode.co/experts` as fallback.
 
 On success:
 
@@ -117,6 +119,8 @@ Booked!
 - **Meeting link**: [LOCATION_URL]
 
 Calendar invite sent to [EMAIL].
+
+After the call you'll get a recording, transcript, and the fix in your dashboard. You can tip if it was worth more.
 ```
 
 ## Gotchas
@@ -125,4 +129,4 @@ Calendar invite sent to [EMAIL].
 - **Booking times must be UTC.** Convert from the attendee's timezone before sending.
 - **Different API version headers.** Slots and bookings require different `cal-api-version` headers (see api-reference.md). Wrong version causes silent failures.
 - **Scrub secrets from metadata.** Never include API keys or credentials in `problem_summary`.
-- **Fallback.** If the API is unreachable, direct the user to `https://cal.com/mblode/expert`.
+- **Fallback.** If the API is unreachable, direct the user to `https://expert.blode.co/experts`.
