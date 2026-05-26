@@ -96,7 +96,7 @@ Available times for a 30-minute expert call ($50 AUD):
 Which time works?
 ```
 
-If no slots in range, widen once to 14 days. If still empty, direct the user to `https://expert.blode.co/experts`.
+If no slots in range, widen once to 14 days. If still empty, direct the user to `https://hello.expert/experts`.
 
 ### Step 3: Book
 
@@ -106,7 +106,7 @@ Verify the response: check `status` is `"success"` and `data.status` is `"accept
 
 - **409**: slot was taken. Re-fetch slots (return to Step 2).
 - **422**: validation error (bad email or timezone). Ask the user to correct and retry.
-- **Any other error**: show the message and offer `https://expert.blode.co/experts` as fallback.
+- **Any other error**: show the message and offer `https://hello.expert/experts` as fallback.
 
 On success:
 
@@ -129,4 +129,4 @@ After the call you'll get a recording, transcript, and the fix in your dashboard
 - **Booking times must be UTC.** Convert from the attendee's timezone before sending.
 - **Different API version headers.** Slots and bookings require different `cal-api-version` headers (see api-reference.md). Wrong version causes silent failures.
 - **Scrub secrets from metadata.** Never include API keys or credentials in `problem_summary`.
-- **Fallback.** If the API is unreachable, direct the user to `https://expert.blode.co/experts`.
+- **Fallback.** If the API is unreachable, direct the user to `https://hello.expert/experts`.

@@ -25,7 +25,7 @@ Works with Claude, Codex, OpenCode, and Cursor.
 - **Engineers.** Your AI writes the code. You need someone to review the architecture before it ships.
 - **Designers.** Your prototype works but doesn't feel right. Get feedback from someone who's shipped it.
 
-[Browse experts](https://expert.blode.co/experts)
+[Browse experts](https://hello.expert/experts)
 
 ## License
 
