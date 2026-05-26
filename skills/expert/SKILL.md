@@ -1,8 +1,9 @@
 ---
 name: expert
 description: >
-  The expert your AI agent calls. Taps into a network of vetted human experts
-  by booking a 30-minute screen-sharing call ($50 AUD, charged after booking).
+  The expert your AI agent calls. Taps into a network of vetted human experts,
+  routes the problem to the most relevant available expert, and books a
+  30-minute screen-sharing call ($50 AUD, charged after booking).
   Use when the AI is stuck, the user says "escalate", "get me an expert",
   "I need a human", "talk to someone", "human help", "book an expert",
   or the problem needs hands-on guidance the AI cannot provide.
@@ -16,15 +17,15 @@ When AI isn't enough, talk to someone who's done it before. Tap into a network o
 
 | File | Read when |
 |------|-----------|
-| [`references/api-reference.md`](./references/api-reference.md) | Making Cal.com API calls to check slots or create a booking |
+| [`references/api-reference.md`](./references/api-reference.md) | Calling the hello.expert API to discover experts, check slots, or book |
 
-## The network
+## How routing works
 
-Experts are vetted for hands-on depth in their domain. Match the user's problem to the expert whose background fits best.
+The network is two-sided and dynamic, like Uber: the user doesn't pick from a fixed list. You describe the problem and route it to the most relevant expert who is available right now. **You are the router** — the API gives you the candidate experts and their live availability; you make the match.
 
-**Current experts:**
-
-- **[Matthew Blode](https://matthewblode.com)** — Two startups, two exits. Forbes 30 Under 30. AI team at Linktree (70M+ creators). OpenAI Codex Ambassador. Melbourne, Australia.
+1. **Tap the network.** Fetch the roster of active experts with their specialties, background, ratings, and availability.
+2. **Match.** Choose the expert whose `specialties` and `bio` best fit the user's problem AND who is available (`available: true`). Prefer the strongest domain fit; break ties by rating, then soonest `nextAvailable`. Never invent experts or assume who is in the network — read it from the API every time.
+3. **Schedule.** Check that expert's times and book, all through the same API.
 
 ## When to escalate
 
@@ -64,9 +65,9 @@ If AI-initiated, suggest escalation and wait for confirmation:
 ```
 I've been stuck on this. [BRIEF_REASON].
 
-I can book you a 30-minute call with Matt Blode ($50 AUD, charged after booking). He'll get a summary of the problem beforehand so you can jump straight in.
+I can route this to an expert from the network and book you a 30-minute call ($50 AUD, charged after booking). They'll get a summary of the problem beforehand so you can jump straight in.
 
-Want me to check available times?
+Want me to find the right expert and check times?
 ```
 
 Once confirmed (or if user-initiated), gather attendee details. Pre-fill from the environment first. Check `git config user.name`, `git config user.email`, and the system timezone, then confirm in one message rather than asking each separately:
@@ -75,43 +76,54 @@ Once confirmed (or if user-initiated), gather attendee details. Pre-fill from th
 I'll book under [NAME] ([EMAIL], [TIMEZONE]). Look right?
 ```
 
-### Step 2: Check slots and present times
+### Step 2: Tap the network and match
 
-Read `references/api-reference.md` for the request format. Query the next 7 days using the attendee's timezone.
+Read `references/api-reference.md` for the request format. Fetch `GET /experts` (pass the attendee's `timeZone`).
+
+From the roster, pick the **most relevant available** expert: match the user's problem to each expert's `specialties` and `bio`, and require `available: true`. If the best-fit expert is not available, choose the next best fit who is. If no one is available, direct the user to `https://hello.expert/experts`.
+
+Briefly name who you matched and why:
+
+```
+Best fit for this is **[NAME]** — [ONE-LINE REASON tied to their background]. Checking their available times.
+```
+
+### Step 3: Present times
+
+Read `references/api-reference.md` for the request format. Query the matched expert's slots for the next 7 days using the attendee's timezone.
 
 Present available times grouped by day. Mention the fee:
 
 ```
-Available times for a 30-minute expert call ($50 AUD):
+Available times with [NAME] for a 30-minute call ($50 AUD):
 
 **Tue 27 May**
 - 11:00 AM – 11:30 AM
 - 12:00 PM – 12:30 PM
-- 1:00 PM – 1:30 PM
 
 **Wed 28 May**
 - 8:00 AM – 8:30 AM
-- 1:00 PM – 1:30 PM
 
 Which time works?
 ```
 
-If no slots in range, widen once to 14 days. If still empty, direct the user to `https://hello.expert/experts`.
+If no slots in range, widen once to 14 days. If still empty, return to Step 2 and try the next best available expert, or direct the user to `https://hello.expert/experts`.
 
-### Step 3: Book
+### Step 4: Book
 
-Read `references/api-reference.md` for the request format. Convert the selected time to UTC before sending. Include a brief `problem_summary` in metadata. One sentence describing the technical problem, stack, and blocker. Scrub any secrets.
+Read `references/api-reference.md` for the request format. Convert the selected time to UTC before sending. Include a brief `problemSummary`: one sentence describing the technical problem, stack, and blocker. Scrub any secrets.
 
-Verify the response: check `status` is `"success"` and `data.status` is `"accepted"`.
+Verify the response: HTTP 201 and `data.status` is `"accepted"`.
 
-- **409**: slot was taken. Re-fetch slots (return to Step 2).
+- **409**: slot was taken. Re-fetch slots (return to Step 3).
 - **422**: validation error (bad email or timezone). Ask the user to correct and retry.
+- **404**: expert no longer active. Re-fetch the roster (return to Step 2).
 - **Any other error**: show the message and offer `https://hello.expert/experts` as fallback.
 
 On success:
 
 ```
-Booked!
+Booked with [NAME]!
 
 - **When**: [LOCAL_TIME] ([TIMEZONE])
 - **Duration**: 30 minutes
@@ -125,8 +137,9 @@ After the call you'll get a recording, transcript, and the fix in your dashboard
 
 ## Gotchas
 
-- **Never book without explicit user confirmation.** Always show the fee and slots first.
+- **Always route through the live API.** Fetch `GET /experts` every time. Never hardcode or assume which experts exist or who is available.
+- **Never book without explicit user confirmation.** Always show the matched expert, the fee, and slots first.
+- **Match relevance AND availability.** The best expert who can't meet in range is not the right match — pick the best available one.
 - **Booking times must be UTC.** Convert from the attendee's timezone before sending.
-- **Different API version headers.** Slots and bookings require different `cal-api-version` headers (see api-reference.md). Wrong version causes silent failures.
-- **Scrub secrets from metadata.** Never include API keys or credentials in `problem_summary`.
+- **Scrub secrets from `problemSummary`.** Never include API keys or credentials.
 - **Fallback.** If the API is unreachable, direct the user to `https://hello.expert/experts`.
