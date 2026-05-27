@@ -1,6 +1,6 @@
 # Expert
 
-The expert your AI agent calls.
+The human expert your AI agent calls.
 
 When AI isn't enough, talk to someone who's done it before. Your agent books you 30 minutes with the right expert from our network. $50 AUD, charged after booking.
 
