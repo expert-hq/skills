@@ -4,11 +4,13 @@ The human expert your AI agent calls.
 
 AI took you beyond your skill set. An expert takes you further. 30-min expert calls, $50 AUD.
 
+**[hello.expert](https://hello.expert)**
+
 ```bash
 npx skills add mblode/expert -g --all -y
 ```
 
-Works with Claude, Codex, OpenCode, and Cursor. [hello.expert](https://hello.expert)
+Works with Claude, Codex, OpenCode, and Cursor.
 
 ## How it works
 
