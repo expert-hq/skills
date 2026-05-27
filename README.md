@@ -7,7 +7,7 @@ AI took you beyond your skill set. An expert takes you further. 30-min expert ca
 **[hello.expert](https://hello.expert)**
 
 ```bash
-npx skills add mblode/expert -g --all -y
+npx skills add expert-hq/skills -g --all -y
 ```
 
 Works with Claude, Codex, OpenCode, and Cursor.

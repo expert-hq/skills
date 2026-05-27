@@ -13,7 +13,7 @@ skills/expert/
 
 ## How it works
 
-The skill is the router in a two-sided network. It fetches the live roster of active experts from `GET https://hello.expert/api/experts`, matches the user's problem to the most relevant available expert (agent-side, no fixed list), then checks slots and books — all through hello.expert. The backend (github.com/mblode/expert-web) proxies Cal.com; the skill never calls Cal.com directly.
+The skill is the router in a two-sided network. It fetches the live roster of active experts from `GET https://hello.expert/api/experts`, matches the user's problem to the most relevant available expert (agent-side, no fixed list), then checks slots and books — all through hello.expert. The backend (github.com/expert-hq/expert) proxies Cal.com; the skill never calls Cal.com directly.
 
 ## Constraints
 
