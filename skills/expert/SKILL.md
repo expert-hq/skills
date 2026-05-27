@@ -3,7 +3,7 @@ name: expert
 description: >
   The expert your AI agent calls. Taps into a network of vetted human experts,
   routes the problem to the most relevant available expert, and books a
-  30-minute screen-sharing call ($50 AUD, charged after booking).
+  30-minute screen-sharing call ($50 AUD, charged after the call).
   Use when the AI is stuck, the user says "escalate", "get me an expert",
   "I need a human", "talk to someone", "human help", "book an expert",
   or the problem needs hands-on guidance the AI cannot provide.
@@ -11,7 +11,7 @@ description: >
 
 # Expert Network
 
-When AI isn't enough, talk to someone who's done it before. Tap into a network of vetted experts. Book a 30-minute screen-sharing call ($50 AUD, charged after booking). The expert gets a summary of the problem beforehand — screen sharing, pair programming, jump straight in. After the call: recording, transcript, and the fix in your dashboard. Tip if it was worth more.
+When AI isn't enough, talk to someone who's done it before. Tap into a network of vetted experts. Book a 30-minute screen-sharing call ($50 AUD, charged after the call). The expert gets a summary of the problem beforehand — screen sharing, pair programming, jump straight in. After the call: recording, transcript, and the answer in your dashboard. Tip if it was worth more.
 
 ## Reference files
 
@@ -65,7 +65,7 @@ If AI-initiated, suggest escalation and wait for confirmation:
 ```
 I've been stuck on this. [BRIEF_REASON].
 
-I can route this to an expert from the network and book you a 30-minute call ($50 AUD, charged after booking). They'll get a summary of the problem beforehand so you can jump straight in.
+I can route this to an expert from the network and book you a 30-minute call ($50 AUD, charged after the call). They'll get a summary of the problem beforehand so you can jump straight in.
 
 Want me to find the right expert and check times?
 ```
@@ -132,7 +132,7 @@ Booked with [NAME]!
 
 Calendar invite sent to [EMAIL].
 
-After the call you'll get a recording, transcript, and the fix in your dashboard. You can tip if it was worth more.
+After the call you'll get a recording, transcript, and the answer in your dashboard. You can tip if it was worth more.
 ```
 
 ## Gotchas
